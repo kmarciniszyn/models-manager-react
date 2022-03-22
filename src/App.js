@@ -1,8 +1,15 @@
+import { ThemeProvider } from "styled-components";
 import { Normalize } from "styled-normalize";
+import { theme } from "./theme";
+import { GlobalStyle } from "./globalStyle";
+
 
 function App() {
   return (
-    <Normalize />
+    <ThemeProvider theme={theme}>
+      <Normalize />
+      <GlobalStyle />
+    </ThemeProvider>
   );
 }
 
