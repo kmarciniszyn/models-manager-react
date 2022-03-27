@@ -12,6 +12,6 @@ export const GlobalStyle = createGlobalStyle`
     body {
         background-color: ${({theme}) => theme.colors.site.background};
         color: ${({theme}) => theme.colors.textPrimary};
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Lato', sans-serif;
     }
 `;
