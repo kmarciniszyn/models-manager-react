@@ -13,5 +13,6 @@ export const GlobalStyle = createGlobalStyle`
         background-color: ${({theme}) => theme.colors.site.background};
         color: ${({theme}) => theme.colors.textPrimary};
         font-family: 'Lato', sans-serif;
+        word-break: break-word;
     }
 `;
