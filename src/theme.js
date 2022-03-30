@@ -9,7 +9,10 @@ const colors = {
     lightGray: "#f7f7f7",
     mediumGray: "#c7c7c7",
     darkGray: "#777777",
-    transparentBlack: "rgba(0,0,0,.2)",
+    shadow: "rgba(0,0,0,.2)",
+    transparentBlack: "rgba(0,0,0,.8)",
+    transparentCyan: "rgba(43,255,234,0.5)",
+    transparentDarkBlue: "rgba(2,97,199,0.5)",
 };
 
 const common = {
@@ -17,13 +20,13 @@ const common = {
         maxMobileWidth: 767,
     },
     boxShadow: {
-        section: `0px 8px 18px -10px ${colors.transparentBlack}`,
+        section: `0px 8px 18px -10px ${colors.shadow}`,
         button: {
-            hover: `0 5px 10px ${colors.transparentBlack}`,
-            active: `0 2px 5px ${colors.transparentBlack}`,
+            hover: `0 5px 10px ${colors.shadow}`,
+            active: `0 2px 5px ${colors.shadow}`,
         },
         input: {
-            focus: `0 2px 5px ${colors.transparentBlack}`,
+            focus: `0 2px 5px ${colors.shadow}`,
         },
     }
 };
@@ -48,11 +51,21 @@ export const theme = {
             text: colors.darkBlue,
             textSpecial: colors.claret,
         },
-        submit: {   
+        submit: {
             gradient: `linear-gradient(to right,
                 ${colors.darkBlue},
                 ${colors.cyan})`,
             text: colors.lightGray,
+        },
+        popup: {
+            background: colors.transparentBlack,
+            boxBackground: colors.white,
+            button: {
+                background: `linear-gradient(to right,
+                    ${colors.darkBlue},
+                    ${colors.cyan})`,
+                text: colors.white,
+            },
         },
         input: {
             borderBottom: colors.mediumGray,
@@ -63,6 +76,15 @@ export const theme = {
             login: {
                 text: colors.mediumGray,
             },
+        },
+        header: {
+            gradientStart: colors.transparentDarkBlue,
+            gradientEnd: colors.transparentCyan,
+            text: colors.white,
+        },
+        navigation: {
+            background: colors.black,
+            text: colors.white,
         },
     }
 };
