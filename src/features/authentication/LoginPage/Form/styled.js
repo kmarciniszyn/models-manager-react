@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { StyledInput } from "../../../../common/StyledInput/styled";
+import { StyledSubmit } from "../../../../common/StyledSubmit/styled";
 
 export const Form = styled.form`
     display: flex;
@@ -13,27 +15,8 @@ export const Wrapper = styled.div`
     margin-bottom: 20px;
 `;
 
-export const Input = styled.input`
+export const Input = styled(StyledInput)`
     margin: 0 15px;
-    padding: 10px;
-    border: none;
-    border-radius: 2px;
-    border-bottom: 2px solid ${({ theme }) => theme.colors.input.borderBottom};
-
-    &::placeholder {
-        color: ${({ theme }) => theme.colors.input.placeholder};
-    }
-
-    &:focus {
-        outline: none;
-        border-bottom: 2px solid ${({ theme }) => theme.colors.primary};
-        box-shadow: ${({ theme }) => theme.boxShadow.input.focus};
-    }
-
-    &:focus:invalid {
-        outline: none;
-        border-bottom: 2px solid ${({ theme }) => theme.colors.input.invalid};
-    }
 `;
 
 export const InputWrapper = styled.div`
@@ -56,28 +39,6 @@ export const Label = styled.label`
     }
 `;
 
-export const Submit = styled.input`
-    cursor: pointer;
-    background: ${({ theme }) => theme.colors.submit.gradient};
-    color: ${({ theme }) => theme.colors.submit.text};
-    padding: 10px;
+export const Submit = styled(StyledSubmit)`
     margin: 15px;
-    letter-spacing: 5px;
-    text-transform: lowercase;
-
-    border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 2px;
-    border-top-right-radius: 2px;
-    border: none;
-
-    transition: all 0.3s;
-
-    &:hover {
-        box-shadow: ${({ theme }) => theme.boxShadow.button.hover};
-    }
-
-    &:active {
-        box-shadow: ${({ theme }) => theme.boxShadow.button.active};
-    }
 `;
