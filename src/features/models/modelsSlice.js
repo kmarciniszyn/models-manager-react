@@ -4,7 +4,9 @@ const modelsSlice = createSlice({
     name: 'models',
     initialState: {
         models: [],
+        report: null,
         modelsLoadingStatus: "initial",
+        reportLoadingStatus: "initial",
     },
     reducers: {
         fetchModels: state => {
@@ -19,6 +21,16 @@ const modelsSlice = createSlice({
             state.modelsLoadingStatus = "error";
             state.models = null;
         },
+        fetchReport: state => {
+            state.reportLoadingStatus = "loading";
+        },
+        fetchReportSuccess: (state, { payload: report }) => {
+            state.reportLoadingStatus = "success";
+            state.report = report;
+        },
+        fetchReportError: state => {
+            state.reportLoadingStatus = "error";
+        },
     }
 });
 
@@ -26,11 +38,16 @@ const selectModelsState = state => state.models;
 
 export const selectModels = state => selectModelsState(state).models;
 export const selectModelsLoadingStatus = state => selectModelsState(state).modelsLoadingStatus;
+export const selectReportLoadingStatus = state => selectModelsState(state).reportLoadingStatus;
+export const selectReport = state => selectModelsState(state).report;
 
 export const {
     fetchModels,
     fetchModelsSuccess,
     fetchModelsError,
+    fetchReport,
+    fetchReportSuccess,
+    fetchReportError,
 } = modelsSlice.actions;
 
 export default modelsSlice.reducer;
