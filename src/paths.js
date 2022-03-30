@@ -4,4 +4,4 @@ export const removeModelPath = () => "/usun_model";
 export const searchModelsPath = () => "/wyszukaj_modele";
 export const getModelStatePath = () => "/pobierz_stan_modelu";
 export const loadReportPath = (modelName) => `/pobierz_raport/${modelName}.html`;
-export const cauntFraudsPath = () => "/oblicz_fraudy";
+export const calculateFraudsPath = () => "/oblicz_fraudy";
