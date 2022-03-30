@@ -76,6 +76,7 @@ export const theme = {
             login: {
                 text: colors.mediumGray,
             },
+            error: colors.claret,
         },
         header: {
             gradientStart: colors.transparentDarkBlue,
