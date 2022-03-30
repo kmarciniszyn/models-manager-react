@@ -1,6 +1,6 @@
 const colors = {
     cyan: "#2BFFEA",
-    lightBlue: "##A3D3FF",
+    lightBlue: "#A3D3FF",
     mediumBlue: "#45C2FF",
     darkBlue: "#0261C7",
     claret: "#a30000",
@@ -71,6 +71,10 @@ export const theme = {
             borderBottom: colors.mediumGray,
             placeholder: colors.darkGray,
             invalid: colors.claret,
+            radio: {
+                background: colors.mediumGray,
+                backgroundHover: colors.lightBlue,
+            },
         },
         icon: {
             login: {
