@@ -1,8 +1,9 @@
 import React from "react";
-import { Header, Title } from "./styled";
+import { StyledH1 } from "../StyledH1/styled";
+import { Header } from "./styled";
 
 export default ({ title }) => (
     <Header>
-        <Title>{title}</Title>
+        <StyledH1>{title}</StyledH1>
     </Header>
 );
