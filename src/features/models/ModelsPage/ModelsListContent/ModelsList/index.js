@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { toReport } from "../../../../../routes";
 import {
     List,
     Paragraph,
@@ -14,6 +16,8 @@ import removeModel from "./removeModel";
 import Popup from "../../../../../common/Popup";
 
 export default ({ models }) => {
+    const history = useHistory();
+
     const [popupVisible, setPopupVisible] = useState(false);
     /* popupText is in variable because 
     I use one Popup component to display two different text*/
@@ -31,6 +35,7 @@ export default ({ models }) => {
     };
 
     const loadReport = (modelName) => {
+        history.push(toReport({ name: modelName }));
     };
 
     return (
