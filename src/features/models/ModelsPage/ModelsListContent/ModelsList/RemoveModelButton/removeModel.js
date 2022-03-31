@@ -1,5 +1,5 @@
 import axios from "axios";
-import { serverURL, removeModelPath } from "../../../../../paths";
+import { serverURL, removeModelPath } from "../../../../../../paths";
 
 const removeModel = async (modelFullName) => {
 

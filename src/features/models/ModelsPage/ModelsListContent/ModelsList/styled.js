@@ -30,10 +30,6 @@ export const IconButton = styled(Button)`
     align-items: center;
 `;
 
-export const IconRemoveButton = styled(IconButton)`
-    color: ${({ theme }) => theme.colors.button.textSpecial};
-`;
-
 export const Paragraph = styled.p`
     margin: 0;
 `;

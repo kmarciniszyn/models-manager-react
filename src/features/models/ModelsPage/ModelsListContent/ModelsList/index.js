@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import { toModelDetails, toReport } from "../../../../../routes";
 import {
@@ -7,32 +7,13 @@ import {
     SpecialText,
     ListItem,
     StyledLink,
-    IconButton,
-    IconRemoveButton
+    IconButton
 } from "./styled";
 import { ReportIcon } from "./ReportIcon/styled";
-import { BinIcon } from "./BinIcon/styled";
-import removeModel from "./removeModel";
-import Popup from "../../../../../common/Popup";
+import RemoveModelButton from "./RemoveModelButton";
 
 export default ({ models }) => {
     const history = useHistory();
-
-    const [popupVisible, setPopupVisible] = useState(false);
-    /* popupText is in variable because 
-    I use one Popup component to display two different text*/
-    const [popupText, setPopupText] = useState("");
-
-    // this arrow function is required to close the popup
-    const togglePopup = () => {
-        setPopupVisible(previous => !previous);
-    }
-
-    const remove = async (modelName) => {
-        const removeResult = await removeModel(modelName);
-        setPopupText(removeResult.description);
-        setPopupVisible(true);
-    };
 
     const loadReport = (modelName) => {
         history.push(toReport({ name: modelName }));
@@ -64,22 +45,11 @@ export default ({ models }) => {
                                 <ReportIcon />
                                 &nbsp;report
                             </IconButton>
-                            <IconRemoveButton
-                                onClick={() => remove(model.name)}
-                            >
-                                <BinIcon />
-                                &nbsp;remove
-                            </IconRemoveButton>
+                            <RemoveModelButton modelName={model.name} />
                         </ListItem>
                     )
                 }
             </List>
-            <Popup
-                title={"remove model"}
-                text={popupText}
-                isVisible={popupVisible}
-                onClose={togglePopup}
-            />
         </>
     );
 };
