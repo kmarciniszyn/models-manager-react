@@ -3,17 +3,14 @@ import { toLogin } from "../../../routes";
 import MainHeader from "../../../common/MainHeader";
 import { Main, Paragraph, StyledLink, Wrapper } from "./styled";
 import { StyledSection } from "../StyledSection/styled";
-import { useDispatch } from "react-redux";
-import { logoutUser } from "../../models/modelsSlice";
+import { useFakeAuth } from "../../../fakeAuth";
 
 export default () => {
-    const dispatch = useDispatch();
+    const auth = useFakeAuth(); // fake auth
 
     useEffect(() => {
-        // here should be code to logout
-
-
-        dispatch(logoutUser());
+        // fake logout
+        auth.logout();
     }, []);
 
     return (

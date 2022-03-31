@@ -1,16 +1,29 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { Form, Input, InputWrapper, Label, Submit, Wrapper } from "./styled";
 import { UserIcon } from "./UserIcon/styled";
 import { PadlockIcon } from "./PadlockIcon/styled";
-
+import { toModels } from "../../../../routes";
+import { useFakeAuth } from "../../../../fakeAuth";
 
 export default () => {
+    const history = useHistory();
     const [identifier, setIdentifier] = useState("");
     const [password, setPassword] = useState("");
+    const auth = useFakeAuth(); // fake auth
 
-    const onFormSubmit = (event) => {
+    const onFormSubmit = async (event) => {
         event.preventDefault();
-    }
+
+        // fake auth for demo
+        const { isLogin } = await auth.login(identifier, password);
+
+        if (isLogin) {
+            history.replace(toModels());
+        }else{
+            alert("login error");
+        }
+    };
 
     return (
         <Form

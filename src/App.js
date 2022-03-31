@@ -14,6 +14,7 @@ import {
   toModels,
   toReport
 } from "./routes";
+import { PrivateRoute } from "./fakeAuth";
 
 function App() {
   return (
@@ -22,27 +23,27 @@ function App() {
       <Navigation />
 
       <Switch>
-        <Route path={toReport()}>
+        <PrivateRoute path={toReport()}>
           <ReportPage />
-        </Route>
-        <Route path={toModelDetails()}>
+        </PrivateRoute>
+        <PrivateRoute path={toModelDetails()}>
           <ModelPage />
-        </Route>
-        <Route path={toModels()}>
+        </PrivateRoute>
+        <PrivateRoute path={toModels()}>
           <ModelsPage />
-        </Route>
-        <Route path={toCalculateFrauds()}>
+        </PrivateRoute>
+        <PrivateRoute path={toCalculateFrauds()}>
           <FraudPage />
-        </Route>
+        </PrivateRoute>
         <Route path={toLogin()}>
           <LoginPage />
         </Route>
         <Route path={toLogout()}>
           <LogoutPage />
         </Route>
-        <Route path="/">
+        <PrivateRoute path="/">
           <ModelsPage />
-        </Route>
+        </PrivateRoute>
       </Switch>
     </HashRouter>
   );
