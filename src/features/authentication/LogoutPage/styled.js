@@ -4,8 +4,8 @@ import background from "./background.png";
 
 export const Main = styled.main`
     position: absolute;
-    height: 100vh;
-    width: 100vw;
+    height: calc(100vh - 60.4px);
+    width: 100%;
     background-image: linear-gradient(to right bottom,
         rgba(2, 97, 199, 0.5),
         rgba(43, 255, 234, 0.5)),

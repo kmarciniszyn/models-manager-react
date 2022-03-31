@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Wrapper = styled.main`
     position: relative;
-    height: 100vh;
-    width: 100vw;
+    height: calc(100vh - 60.4px);
+    width: 100%;
 `;
 
 export const VideoWrapper = styled.div`
