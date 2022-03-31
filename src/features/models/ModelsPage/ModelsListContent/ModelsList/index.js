@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { toReport } from "../../../../../routes";
+import { toModelDetails, toReport } from "../../../../../routes";
 import {
     List,
     Paragraph,
@@ -48,7 +48,7 @@ export default ({ models }) => {
                                 <SpecialText>
                                     name
                                 </SpecialText>
-                                <StyledLink>
+                                <StyledLink to={toModelDetails(model.name)}>
                                     {model.name}
                                 </StyledLink>
                             </Paragraph>
