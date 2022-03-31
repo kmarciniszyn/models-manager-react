@@ -24,3 +24,5 @@ yarn-error.log*
 src/features/models/ModelPage/exampleModelData.js
 src/features/models/ModelsPage/NewModel/defaultModelData.js
 src/features/models/ReportPage/report.txt
+public/models.json
+public/report.txt
