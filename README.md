@@ -56,7 +56,7 @@ Do zbudowania poniższeej aplikacji zastosowano technologie:
 
 Użyto do zarządzania stanem aplikacji. Stan aplikacji zawiera informacje m.in. takie jak lista modeli oraz informacja o zalogowaniu użytkownika.
 
-### Redax-saga
+### Redux-saga
 
 Utworzono dwie sagi. Jedną do obsługi pobierania modeli oraz ich stanów oraz drugą do obsługi pobierania raportu. Zamieszczono je w głównej sadze *root saga*, którą podłączono do stora.
 
