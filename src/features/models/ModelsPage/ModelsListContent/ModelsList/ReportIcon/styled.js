@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as Icon } from "./download_report.svg";
+import { ReactComponent as Icon } from "./report.svg";
 
 export const ReportIcon = styled(Icon)`
     color: ${({ theme }) => theme.colors.textPrimary};
