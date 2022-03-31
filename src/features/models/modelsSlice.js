@@ -7,6 +7,7 @@ const modelsSlice = createSlice({
         report: null,
         modelsLoadingStatus: "initial",
         reportLoadingStatus: "initial",
+        isUerLogin: false,
     },
     reducers: {
         fetchModels: state => {
@@ -31,6 +32,12 @@ const modelsSlice = createSlice({
         fetchReportError: state => {
             state.reportLoadingStatus = "error";
         },
+        loginUser: state => {
+            state.isUerLogin = true;
+        },
+        logoutUser: state => {
+            state.isUerLogin = false;
+        },
     }
 });
 
@@ -40,6 +47,7 @@ export const selectModels = state => selectModelsState(state).models;
 export const selectModelsLoadingStatus = state => selectModelsState(state).modelsLoadingStatus;
 export const selectReportLoadingStatus = state => selectModelsState(state).reportLoadingStatus;
 export const selectReport = state => selectModelsState(state).report;
+export const selectIsUserLogin = state => selectModelsState(state).isUerLogin;
 
 export const {
     fetchModels,
@@ -48,6 +56,8 @@ export const {
     fetchReport,
     fetchReportSuccess,
     fetchReportError,
+    loginUser,
+    logoutUser
 } = modelsSlice.actions;
 
 export default modelsSlice.reducer;
